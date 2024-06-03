@@ -1,0 +1,19 @@
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
+@import './components/sideBar/SideBar.module.scss';
+@import './pages/main/Main.module.scss';
+@import './pages/profile/Profile.module.scss';
+@import './pages/main/animatedPlus/AnimatedPlus.module.scss';
+@import './assets/scss/global.scss';
+@import './components/modals/whellModal/Whell.module.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: #3B58F8;
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --subtext-color: #B8C0D1;
+}

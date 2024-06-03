@@ -1,0 +1,120 @@
+.Profile {
+    padding: 20px;
+
+    .back-button {
+        background: none;
+        border: none;
+        color: #007BFF;
+        font-size: 16px;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .profile-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 18px;
+
+        .profile-image {
+            width: 88px;
+            height: 88px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+
+            img {
+                width: 80px;
+                height: 80px;
+                border-radius: 8px;
+            }
+        }
+
+        .profile-name {
+            margin-top: 22px;
+            font-size: 28px;
+        }
+    }
+
+    .tickets {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 20px;
+        gap: 8px;
+
+        .ticket {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            width: 50%;
+            height: 80px;
+            box-shadow: var(--shadow);
+
+
+            .ticket-type {
+                padding: 5px;
+                font-size: 12px;
+                border-radius: 5px;
+            }
+
+            .ticket-count {
+                font-size: 24px;
+            }
+        }
+    }
+
+    .lottery-section {
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .lottery {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            height: 80px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+
+            margin-bottom: 10px;
+
+            .lottery-image {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+            }
+
+            .lottery-info {
+                flex: 1;
+
+                .lottery-description {
+                    font-size: 16px;
+                }
+
+                .lottery-status {
+                    font-size: 14px;
+                    color: var(--subtext-color);
+                }
+            }
+
+            .lottery-count {
+                font-size: 18px;
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                align-items: flex-end;
+
+                img {
+                    width: 20px;
+                    height: 12px;
+                }
+            }
+
+        }
+    }
+}

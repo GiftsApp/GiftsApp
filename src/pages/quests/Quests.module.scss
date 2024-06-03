@@ -1,0 +1,84 @@
+.container {
+    margin-top: 24px;
+}
+
+.balanceSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 24px;
+
+    .ticket {
+        width: 180px;
+        height: 108px;
+    }
+
+    .earnMore {
+        font-size: 24px;
+        margin-top: 25px;
+        font-weight: 500;
+    }
+}
+
+.tasksSection {
+    .taskTitle {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .tasks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+}
+
+.taskItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .taskIconCont {
+        width: 135px;
+        height: 135px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        background-color: rgba(211, 211, 211, 0.25);
+    }
+
+    .taskIcon {
+        width: 100%;
+        height: 100%;
+    }
+
+    .description {
+        font-size: 14px;
+        margin-bottom: 8px;
+        text-align: start;
+    }
+
+    .reward {
+        font-size: 16px;
+        font-weight: 500;
+        color: blue;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: flex-start;
+
+        img {
+            width: 20px;
+            height: 12px;
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.container {
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.balance {
+    box-shadow: var(--shadow);
+    display: flex;
+    padding: 20px;
+    border-radius: 16px;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.balance img {
+    width: 60px;
+    height: 40px;
+    margin-right: 16px;
+}
+
+.balanceInfo {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+
+    p:first-child {
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 4px;
+    }
+
+    .balanceAmount {
+        font-size: 24px;
+    }
+}
+
+.boosts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .boostsTitle {
+        font-size: 20px;
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+.boostItem {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+
+
+    img {
+        width: 40px;
+        height: 40px;
+        margin-right: 16px;
+    }
+
+    .boostInfo {
+        flex-grow: 1;
+
+        .boostName {
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .boostLevel {
+            font-size: 14px;
+            color: #888;
+        }
+    }
+
+    .boostPrice {
+        font-size: 16px;
+    }
+}

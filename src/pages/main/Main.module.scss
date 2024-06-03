@@ -1,0 +1,112 @@
+.Main {
+
+    .userSide {
+        height: 80px;
+        border-radius: 16px;
+        padding: 16px;
+        box-shadow: var(--shadow);
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+
+            .username {
+                font-size: 15px;
+                font-weight: 400;
+                line-height: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    .secondSide {
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px;
+            width: 50%;
+            height: 80px;
+            gap: 14px;
+            box-shadow: var(--shadow);
+
+        }
+    }
+
+    .bigSide {
+        margin-top: 16px;
+        height: 386px;
+        padding: 16px;
+        gap: 16px;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+
+
+        .counter {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 41px;
+        }
+
+        .coinContainer {
+            margin: 16px auto 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .footer {
+            margin-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            height: 42px;
+            align-items: flex-end;
+
+            div {
+                display: flex;
+                align-items: center;
+
+                .gray {
+                    margin-bottom: 6px;
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: 16px;
+                    text-align: center;
+                    color: var(--subtext-color);
+
+                    &~div {
+                        gap: 11px;
+                        font-size: 17px;
+                        font-weight: 400;
+                        line-height: 22px;
+                        text-align: left;
+                    }
+                }
+
+                img {
+                    margin: 0;
+                }
+
+                &:nth-child(1) {
+                    font-size: 13px;
+                    font-weight: 590;
+                    line-height: 18px;
+                    text-align: left;
+
+                }
+            }
+        }
+    }
+}
