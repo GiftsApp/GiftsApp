@@ -1,0 +1,196 @@
+.container {
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.balanceSection {
+    display: flex;
+    margin: 25px 0;
+    padding: 16px;
+    border-radius: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-shadow: var(--shadow);
+
+    .balanceItemContainer {
+        display: flex;
+        margin-top: 24px;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        gap: 8px;
+
+        .balanceItem {
+            width: 50%;
+            height: 80px;
+            box-shadow: var(--shadow);
+            border-radius: 16px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+
+            img {
+                width: 52px;
+                height: auto;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                width: max-content;
+            }
+        }
+    }
+
+}
+
+.buyTicketSection {
+    margin-bottom: 24px;
+    padding: 16px;
+    box-shadow: var(--shadow);
+    border-radius: 16px;
+
+    .buyTicketSectionTitle {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        justify-content: space-between;
+    }
+
+    .costTitle {
+        font-size: 15px;
+        line-height: 16px;
+        color: var(--subtext-color);
+    }
+
+    .ticketControls {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+        justify-content: space-between;
+
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &:last-child {
+                align-items: flex-end;
+                flex-direction: column;
+                width: 50%;
+                gap: 8px;
+
+                img {
+                    width: 20px;
+                }
+
+                p {
+                    width: 100%;
+                    text-align: end;
+                }
+            }
+        }
+
+        .ticketControlsBTN {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: lighter;
+            color: var(--text-color);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        p {
+            font-size: 16px;
+            font-weight: 500;
+            width: 40px;
+        }
+
+        .cost {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+    }
+
+    .buyButton {
+        font-size: 16px;
+        width: 100%;
+        height: 54px;
+        font-weight: 700;
+        color: white;
+        background-color: var(--blue);
+        border: none;
+        border-radius: 54px;
+        margin-top: 8px;
+        cursor: pointer;
+    }
+}
+
+.lotterySection {
+    h2 {
+        font-size: 24px;
+        font-weight: 500;
+        text-align: start;
+        width: 90%;
+        margin: 0 auto 16px auto;
+        color: var(--header-text-color);
+    }
+}
+
+.lotteryItem {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    text-align: start;
+
+    .lotteryIcon {
+        width: 48px;
+        height: auto;
+        margin-right: 16px;
+    }
+
+    .lotteryInfo {
+        flex-grow: 1;
+
+        .description {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 4px;
+            color: var(--text-color);
+        }
+
+        .participation {
+            font-size: 14px;
+            color: var(--subtext-color);
+        }
+    }
+
+    .participationCountCont {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 8px;
+
+        img {
+            width: 20px;
+        }
+    }
+
+    .participationCount {
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+}

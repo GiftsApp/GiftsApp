@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./SubscriptionTaskComponent.module.scss";
 import {
   Instagram,
@@ -6,12 +6,18 @@ import {
   Tiktok,
   socialNetworksIcon,
 } from "../../../assets/icons/quests/exports";
+import { silver } from "../../../assets/icons/exports";
+import { FaAngleRight } from "react-icons/fa";
+import QuestCompletionModal from "../completionModal";
 
 const SubscriptionTaskComponent = () => {
+  const [open, setOpen] = useState(false);
   return (
     <section className={styles.container}>
       <div className={styles.header}>
-        <img src={socialNetworksIcon} alt="Social Networks" />
+        <div className={styles.imageCont}>
+          <img src={socialNetworksIcon} alt="Social Networks" />
+        </div>
         <p className={styles.mainDescription}>
           Subscribe to the Telegram GIFT's App social network
         </p>
@@ -21,23 +27,36 @@ const SubscriptionTaskComponent = () => {
         </p>
         <div className={styles.rewardSection}>
           <p>You will get</p>
-          <p className={styles.rewardAmount}>+ 1 000</p>
+          <div className={styles.rewardAmount}>
+            <img src={silver} alt="" />
+            <p>+ 1 000</p>
+          </div>
         </div>
       </div>
       <div className={styles.buttons}>
-        <button className={styles.button}>
-          <img src={Instagram} alt="Icon" />
-          Subscribe
+        <button onClick={() => setOpen(true)} className={styles.button}>
+          <div>
+            <img src={Instagram} alt="Icon" />
+            Subscribe
+          </div>
+          <FaAngleRight className={styles.arrow} />
         </button>
         <button className={styles.button}>
-          <img src={Telegram} alt="Icon" />
-          Subscribe
+          <div>
+            <img src={Telegram} alt="Icon" />
+            Subscribe
+          </div>
+          <FaAngleRight className={styles.arrow} />
         </button>
         <button className={styles.button}>
-          <img src={Tiktok} alt="Icon" />
-          Subscribe
+          <div>
+            <img src={Tiktok} alt="Icon" />
+            Subscribe
+          </div>
+          <FaAngleRight className={styles.arrow} />
         </button>
       </div>
+      <QuestCompletionModal isOpen={open} onClose={() => setOpen(false)} />
     </section>
   );
 };
