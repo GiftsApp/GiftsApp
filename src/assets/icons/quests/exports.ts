@@ -5,9 +5,9 @@ import second from "./second.png";
 import third from "./third.png";
 import four from "./four.png";
 import socialNetworksIcon from "./socialNetworksIcon.png";
-import Instagram from "./Instagram.png";
-import Telegram from "./Telegram.png";
-import Tiktok from "./Telegram.png";
+import Instagram from "./instagram.png";
+import Telegram from "./telegram.png";
+import Tiktok from "./tiktok.png";
 import winPopupImage from "./winPopup.png";
 
 export {

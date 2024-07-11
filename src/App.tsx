@@ -8,10 +8,12 @@ import Quests from "./pages/quests";
 import SubscriptionTaskComponent from "./pages/quests/SubscriptionTaskComponent.tsx";
 import LotteryComponent from "./pages/lottery";
 import InviteFriendsComponent from "./pages/friends";
+import { useAppDispatch } from "./store/hooks";
 
 const App: React.FC = () => {
   const location = useLocation();
   const [showSideBar, setShowSideBar] = useState(true);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (location.pathname === "/profile") {
@@ -20,6 +22,26 @@ const App: React.FC = () => {
       setShowSideBar(true);
     }
   }, [location?.pathname]);
+
+  const wind = window as any;
+  const tg = wind.Telegram?.WebApp;
+  const user = tg.initDataUnsafe?.user;
+  const queryId = tg.initDataUnsafe?.query_id;
+  useEffect(() => {
+    // if (user && queryId) {
+    // const data = {
+    //   id: String(user?.id),
+    //   queryID: queryId,
+    //   name: user?.username,
+    //   languageCode: user?.language_code,
+    // };
+    // if (!localStorage.getItem("userId")) {
+    //   dispatch(userCreate(data));
+    // }
+    // dispatch(getUserMini());
+    // }
+  }, [dispatch, user, queryId]);
+
   return (
     <>
       <Routes>
@@ -28,7 +50,7 @@ const App: React.FC = () => {
         <Route path="/boosts" element={<Boosts />} />
         <Route path="/quests">
           <Route index element={<Quests />} />
-          <Route path="subscribe" element={<SubscriptionTaskComponent />} />
+          <Route path=":id" element={<SubscriptionTaskComponent />} />
         </Route>
         <Route path="/lottery" element={<LotteryComponent />} />
         <Route path="/friends" element={<InviteFriendsComponent />} />

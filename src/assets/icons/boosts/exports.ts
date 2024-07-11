@@ -1,6 +1,6 @@
 import cart from "./cart.png";
-import beterTap from "./beterTap.png";
+import betterTapIcon from "./beterTap.png";
 import autoClicker from "./autoClicker.png";
-import energy from "./energy.png";
+import energyIcon from "./energy.png";
 
-export { cart, beterTap, autoClicker, energy };
+export { cart, betterTapIcon, autoClicker, energyIcon };

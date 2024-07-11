@@ -7,11 +7,13 @@ import {
   flash,
   silver,
 } from "../../assets/icons/exports";
-import { user } from "../../assets/images/exports";
+import { userImage } from "../../assets/images/exports";
 import AnimatedPlus from "./animatedPlus/animatedPlus";
 import WhellModal from "../../components/modals/whellModal";
 import { useNavigate } from "react-router";
 import RewardModal from "../../components/modals/rewardModal";
+import { useAppSelector } from "../../store/hooks";
+import { selectUserData } from "../../store/features/auth/selectors";
 
 interface PlusItem {
   id: number;
@@ -20,29 +22,28 @@ interface PlusItem {
 }
 
 const Main = () => {
+  const user = useAppSelector(selectUserData());
   const navigate = useNavigate();
   const contRef = useRef<HTMLDivElement | null>(null);
   const [plusItems, setPlusItems] = useState<PlusItem[]>([]);
   const [openWhell, setOpenWhell] = useState<boolean>(false);
   const [isShrinking, setIsShrinking] = useState(false);
   const [openReward, setOpenReward] = useState(false);
-  const [balans, setBalans] = useState(1324321);
-  const [energy, setEnergy] = useState(100);
-
-  const MAX_ENERGY = 100;
+  const [balance, setBalance] = useState(user?.silverBalance);
+  const [energy, setEnergy] = useState(user?.energy);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setEnergy((prevEnergy) => {
-        if (prevEnergy < MAX_ENERGY) {
-          return prevEnergy + 1;
+        if (prevEnergy < user?.energy) {
+          return prevEnergy + 3;
         }
         return prevEnergy;
       });
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [user?.energy]);
 
   const handleAnimation = () => {
     const container = contRef.current;
@@ -52,7 +53,7 @@ const Main = () => {
 
       const newPlusItems: PlusItem[] = [];
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < user.tapLVL; i++) {
         newPlusItems.push({
           id: Date.now() + i,
           x: Math.random() * containerRect.width + containerRect.x * 0.1,
@@ -67,8 +68,8 @@ const Main = () => {
   const handleTap = () => {
     if (energy === 0) return;
     setIsShrinking(true);
-    setBalans(balans + 1);
-    setEnergy(energy - 1);
+    setBalance(balance + user.energyLVL);
+    setEnergy(energy - user.energyLVL);
     setTimeout(() => setIsShrinking(false), 200);
     handleAnimation();
   };
@@ -77,23 +78,30 @@ const Main = () => {
     <section className="Main">
       <div className="userSide" onClick={() => navigate("/profile")}>
         <div>
-          <img src={user} alt="" />
-          <p className="username">Ruslan Kargapolov</p>
+          <img src={userImage} alt="" />
+          <p className="username">{user.name}</p>
         </div>
         <img src={userArrow} alt="" />
       </div>
       <div className="secondSide">
-        <div onClick={() => setOpenWhell(true)}>
+        <div
+          className={!user.isAllowWheelSpin ? "disabled" : ""}
+          onClick={() => {
+            if (user.isAllowWheelSpin) {
+              setOpenWhell(true);
+            }
+          }}
+        >
           <img src={whell} alt="" />
           <p>Wheel</p>
         </div>
         <div>
           <img src={goldCart} alt="" />
-          <p>123</p>
+          <p>{user.goldBalance}</p>
         </div>
       </div>
       <div className="bigSide">
-        <p className="counter">{balans.toLocaleString().replace(/,/g, " ")}</p>
+        <p className="counter">{balance.toLocaleString().replace(/,/g, " ")}</p>
         <div className="coinContainer" ref={contRef}>
           <img
             className={isShrinking ? "shrinking" : ""}
@@ -110,12 +118,14 @@ const Main = () => {
         <div className="footer">
           <div>
             <img src={flash} alt="" />
-            <p>{energy}/100</p>
+            <p>
+              {energy}/{user.energy}
+            </p>
           </div>
           <div style={{ flexDirection: "column" }}>
             <p className="gray">Per tap</p>
             <div>
-              +1 <img src={silver} alt="" />
+              +{user.tapLVL} <img src={silver} alt="" />
             </div>
           </div>
         </div>

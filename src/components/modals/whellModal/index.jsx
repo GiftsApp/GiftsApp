@@ -8,8 +8,9 @@ const WheelModal = ({ open, handleModal }) => {
     content: {
       top: "50%",
       left: "50%",
-      inset: '45% 40px 40px 50%',
-      transform: "translate(-50%, -62%)",
+      // inset: '45% 40px 40px 50%',
+      transform: "translate(-50%, -61%)",
+      height: '100vh',
       width: "100%",
       background: "transparent",
       border: 'none',
@@ -74,9 +75,16 @@ const WheelModal = ({ open, handleModal }) => {
       onRequestClose={() => handleModal(false)}
       style={customStyles}
     >
-      <div onClick={spin} className="wheel-container">
-        <div className="wheel">
+      <div onClick={() => handleModal(false)} className="wheel-container">
+        <div onClick={(e) => {
+          e.stopPropagation()
+          spin()
+        }} className="wheel">
           <img
+            onClick={(e) => {
+              e.stopPropagation()
+              spin()
+            }}
             src={wheel}
             alt="wheel"
             style={{ transform: `rotate(${rotation}deg)` }}

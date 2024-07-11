@@ -41,6 +41,9 @@
             gap: 14px;
             box-shadow: var(--shadow);
 
+            &.disabled {
+                opacity: .5;
+            }
         }
     }
 
